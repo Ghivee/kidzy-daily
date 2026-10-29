@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Check-in — Kidzy Daily</title>
+<meta name="kidzy-title" content="ci.title">
+<meta name="description" content="Build today's order like you're at a café, then read your Kidney Receipt and swap what goes over the limit.">
+<meta name="theme-color" content="#ee5b6c">
+<meta property="og:title" content="Kidzy Daily — Check-in">
+<meta property="og:image" content="/assets/og.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-512.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/pages.css">
+<script src="/js/boot.js"></script>
+<script type="module" src="/js/pages/checkin.js"></script>
+</head>
+<body class="page-checkin">
+<header data-shell="top"></header>
+<main id="main">
+  <div class="wrap page-head">
+    <p class="kicker" id="ciKicker">Today's check-in</p>
+    <h1 data-i18n="ci.h1">What did you order today?</h1>
+    <p class="lede" data-i18n="ci.lede">Build your order like you're at a café.</p>
+  </div>
+  <div class="wrap">
+    <div id="notices"></div>
+    <div id="app" aria-live="polite"></div>
+  </div>
+</main>
+<footer data-shell="foot"></footer>
+</body>
+</html>

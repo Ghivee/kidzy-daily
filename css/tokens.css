@@ -1,0 +1,89 @@
+/* Kidzy Daily — design tokens
+   Palette is built around one idea: a kidney that runs a small café.
+   Plum ink for lines, rose for Kidzy, teal for water, amber for sugar & salt,
+   cream receipt paper, and one hot red reserved for "over the limit". */
+
+:root {
+  --ink: #2a0f1c;
+  --ink-2: #5a3446;
+  --ink-3: #8a6474;
+  --paper: #fbf6ea;
+  --paper-2: #f4ead4;
+  --bg: #fff8ef;
+  --bg-2: #fdeee0;
+  --card: #ffffff;
+  --line: #2a0f1c;
+  --divider: #2a0f1c; /* structural rules (nav, footer, section edges) */
+
+  --rose: #ee5b6c;
+  --rose-2: #f88d98;
+  --rose-3: #ffd3d6;
+  --teal: #1c9c96;
+  --teal-2: #7fd6cf;
+  --teal-3: #d4f2ee;
+  --amber: #f0a531;
+  --amber-2: #ffd27a;
+  --amber-3: #fff0cc;
+  --hot: #e2412f;
+  --hot-3: #ffe0da;
+  --leaf: #4c9a52;
+
+  --on-rose: #2a0f1c;
+  --on-hot: #ffffff;
+
+  --shadow: 0 4px 0 var(--line);
+  --shadow-lg: 0 7px 0 var(--line);
+  --r-s: 12px;
+  --r-m: 20px;
+  --r-l: 32px;
+  --bw: 2.5px;
+
+  --f-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --f-body: "Schibsted Grotesk", system-ui, sans-serif;
+  --f-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --ease-pop: cubic-bezier(.3, 1.5, .5, 1);
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --gutter: clamp(16px, 4vw, 40px);
+  --max: 1120px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #fbe9ee;
+    --ink-2: #e2bcc8;
+    --ink-3: #b28d9b;
+    --paper: #fbf6ea;
+    --paper-2: #efe3c8;
+    --bg: #1a0a12;
+    --bg-2: #24101a;
+    --card: #2c1420;
+    --line: #070205;
+    --divider: #6b3a50;
+    --rose-3: #4a1d29;
+    --teal-3: #0f3533;
+    --amber-3: #3b2a0c;
+    --hot-3: #4a1810;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ink: #fbe9ee;
+  --ink-2: #e2bcc8;
+  --ink-3: #b28d9b;
+  --paper: #fbf6ea;
+  --paper-2: #efe3c8;
+  --bg: #1a0a12;
+  --bg-2: #24101a;
+  --card: #2c1420;
+  --line: #070205;
+  --divider: #6b3a50;
+  --rose-3: #4a1d29;
+  --teal-3: #0f3533;
+  --amber-3: #3b2a0c;
+  --hot-3: #4a1810;
+  color-scheme: dark;
+}

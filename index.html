@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kidzy Daily — your kidney's daily check-in</title>
+<meta name="kidzy-title" content="home.title">
+<meta name="description" content="Kidzy Daily turns your daily habits into a check-in with your kidney. Build your order like a café, read your Kidney Receipt, swap what goes over the limit.">
+<meta name="theme-color" content="#ee5b6c">
+<meta property="og:title" content="Kidzy Daily">
+<meta property="og:description" content="Your kidney's daily check-in. Small habits today, keep your kidneys okay.">
+<meta property="og:image" content="/assets/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-512.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/pages.css">
+<script src="/js/boot.js"></script>
+<script src="/vendor/qrcode-generator-1.4.4.js" defer></script>
+<script type="module" src="/js/pages/home.js"></script>
+</head>
+<body class="page-home">
+<header data-shell="top"></header>
+
+<main id="main">
+  <!-- Scene 1.1 — hook -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker" data-i18n="home.kicker">Your kidney's daily check-in</p>
+        <h1 data-i18n="home.h1">Quick question. What did you eat &amp; drink today?</h1>
+        <p class="lede" data-i18n="home.lede">Your kidneys already dealt with all of it.</p>
+        <div class="hero-cta">
+          <a class="btn" href="/check-in"><span data-i18n="home.cta">Do today's check-in</span></a>
+          <a class="btn ghost" href="#meet"><span data-i18n="home.cta2">Meet Kidzy</span></a>
+        </div>
+      </div>
+      <div class="stage" id="stage">
+        <canvas class="stage-fx" id="fx" aria-hidden="true"></canvas>
+        <p class="say" id="say" aria-live="polite" data-i18n="home.feed.say0">Hi. I'm Kidzy.</p>
+        <div class="stage-kidzy" id="feedKidzy"></div>
+        <div class="stage-out" aria-hidden="true">
+          <span class="out-clean"><i></i><span data-i18n="home.feed.clean"></span></span>
+          <span class="out-waste"><i></i><span data-i18n="home.feed.waste"></span></span>
+        </div>
+        <div class="stage-meter"><b id="filtered">0</b> <span data-i18n="home.feed.filtered">filtered</span></div>
+        <div class="tray" id="tray">
+          <span class="tray-hint" data-i18n="home.feed.hint">Drag to the mouth or tap</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scene 1.2–1.3 — meet Kidzy -->
+  <section class="section meet" id="meet">
+    <div class="wrap meet-grid">
+      <div class="meet-side" data-reveal>
+        <p class="say meet-say" id="meetSay" data-i18n="home.pet.hello">Go on, poke me.</p>
+        <div class="meet-art" id="meetKidzy"></div>
+        <span class="pet-hint" data-i18n="home.pet.hint">Tap to poke · rub to tickle</span>
+      </div>
+      <div>
+        <p class="kicker" data-i18n="home.meet.kicker" data-reveal>Meet Kidzy</p>
+        <h2 data-i18n="home.meet.h2" data-reveal>Kidzy is my kidney.</h2>
+        <p class="lede" data-i18n="home.meet.p" data-reveal>It works 24/7.</p>
+        <div class="clock card" data-reveal>
+          <span data-i18n="home.meet.clock">Since midnight, your kidneys have worked</span>
+          <b class="clock-num mono" id="clock" aria-live="off">00:00:00</b>
+          <span data-i18n="home.meet.clock2">without a single break.</span>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <h3 class="room-h" data-i18n="home.room.h3" data-reveal>And honestly? I've been a terrible roommate.</h3>
+      <p class="room-hint" data-i18n="home.room.hint" data-reveal>Tap a note to answer it.</p>
+      <div class="notes" id="notes"></div>
+    </div>
+  </section>
+
+  <!-- Scene 1.4–1.5 — quiet kidneys -->
+  <section class="section quiet">
+    <div class="wrap">
+      <h2 data-i18n="home.quiet.h2" data-reveal>Kidneys stay quiet until it's serious.</h2>
+      <div class="quiet-grid">
+        <div class="quiet-stat" data-reveal>
+          <b class="big-num" id="deaths">42,000</b>
+          <span data-i18n="home.quiet.stat">deaths a year in Indonesia</span>
+          <a class="cite" href="/sources#sA">[A]</a>
+        </div>
+        <p class="lede" data-i18n="home.quiet.p" data-reveal>Kidney disease is a top ten cause of death in Indonesia.</p>
+      </div>
+      <canvas class="dots" id="dots" aria-hidden="true"></canvas>
+      <p class="quiet-q" data-i18n="home.quiet.q" data-reveal>So, how is your kidney doing today?</p>
+      <a class="title-card" href="/habits" data-reveal>
+        <span class="tc-num">4</span>
+        <span class="tc-text" data-i18n="home.title.card">4 habits your kidneys wish you'd change</span>
+        <span class="tc-habits">
+          <span data-i18n="habit.short.1"></span><span data-i18n="habit.short.2"></span><span data-i18n="habit.short.3"></span><span data-i18n="habit.short.4"></span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Scene 2 — what kidneys do, dialysis, young people -->
+  <section class="section what">
+    <div class="wrap">
+      <p class="kicker" data-i18n="home.what.kicker" data-reveal>First things first</p>
+      <h2 data-i18n="home.what.h2" data-reveal>What do kidneys do?</h2>
+      <div class="what-grid" id="whatGrid"></div>
+      <h3 class="fail-h" data-i18n="home.fail.h3" data-reveal>When they fail, people need regular dialysis.</h3>
+      <div class="fail-grid">
+        <div class="stat card" data-reveal>
+          <b class="big-num" id="hd">134,057</b>
+          <span data-i18n="home.fail.hd">patients had hemodialysis</span>
+          <a class="cite" href="/sources#sB">[B]</a>
+        </div>
+        <div class="stat card amber" data-reveal style="--d:.1s">
+          <b class="big-num">Rp <span id="cost">11</span></b>
+          <span><span data-i18n="home.fail.cost.unit">trillion rupiah</span> · <span data-i18n="home.fail.cost">spent on CKD</span></span>
+          <a class="cite" href="/sources#sB">[B]</a>
+        </div>
+      </div>
+      <div class="young card" id="young" data-reveal>
+        <div class="young-copy">
+          <h3 data-i18n="home.young.h3">And it's reaching young people.</h3>
+          <p data-i18n="home.young.p">Among adults aged 25 to 34…</p>
+          <a class="cite" href="/sources#sC">[C]</a>
+        </div>
+        <div class="bars" role="img" aria-label="2018: 19%, 2023: 31%">
+          <div class="bar-row"><span class="mono">2018</span><span class="bar"><i style="--w:19%"></i></span><b class="mono">19%</b></div>
+          <div class="bar-row hot"><span class="mono">2023</span><span class="bar"><i style="--w:31%"></i></span><b class="mono">31%</b></div>
+          <p class="bar-label" data-i18n="home.young.label">on dialysis, ages 25–34</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scene 3 — the app -->
+  <section class="section app">
+    <div class="wrap">
+      <p class="kicker" data-i18n="home.app.kicker" data-reveal>Why Kidzy Daily</p>
+      <h2 data-i18n="home.app.h2" data-reveal>Kidneys give no warning, so most of us never check.</h2>
+      <p class="lede" data-i18n="home.app.p" data-reveal>Kidzy Daily turns your daily habits into a check-in with your kidney.</p>
+    </div>
+    <div class="rail" id="rail" tabindex="0"></div>
+  </section>
+
+  <!-- Scene 7–8 — call to action, tagline -->
+  <section class="section end">
+    <div class="wrap">
+      <h2 data-i18n="home.end.h2" data-reveal>Your kidneys work every hour of your life.</h2>
+      <p class="lede" data-i18n="home.end.p" data-reveal>They won't warn you.</p>
+      <div class="end-grid">
+        <ol class="actions" id="actions"></ol>
+        <div class="qr-card card" data-reveal>
+          <div class="qr" id="qr" role="img" aria-label="QR code to the check-in page"></div>
+          <p data-i18n="home.end.qr">Point your phone camera here</p>
+          <a class="btn small" href="/check-in"><span data-i18n="home.end.go">Open check-in</span></a>
+        </div>
+      </div>
+      <div class="tagline" data-reveal>
+        <p class="t1" data-i18n="home.tag1">Small habits today, keep your kidneys okay.</p>
+        <div class="tag-kidzy" id="endKidzy"></div>
+        <p class="t2" data-i18n="home.tag2">Ask them today, don't wait for them to say.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer data-shell="foot"></footer>
+</body>
+</html>

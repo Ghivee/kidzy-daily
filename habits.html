@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>4 Habits — Kidzy Daily</title>
+<meta name="kidzy-title" content="hb.title">
+<meta name="description" content="Four habits your kidneys wish you'd change: water, sugary drinks, salty food and painkillers — with the data behind each one.">
+<meta name="theme-color" content="#ee5b6c">
+<meta property="og:title" content="Kidzy Daily — 4 habits your kidneys wish you'd change">
+<meta property="og:image" content="/assets/og.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-512.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..800;1,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/pages.css">
+<script src="/js/boot.js"></script>
+<script type="module" src="/js/pages/habits.js"></script>
+</head>
+<body class="page-habits">
+<header data-shell="top"></header>
+<main id="main">
+  <div class="wrap page-head hb-head">
+    <div>
+      <p class="kicker" data-i18n="hb.kicker">Scene 4</p>
+      <h1 data-i18n="hb.h1">4 habits your kidneys wish you'd change</h1>
+      <p class="lede" data-i18n="hb.lede">They all look harmless. Keep count of how many you do.</p>
+    </div>
+    <div class="hb-today card" id="today"></div>
+  </div>
+  <nav class="wrap hb-jump" id="jump" aria-label="Habits"></nav>
+  <div id="chapters"></div>
+  <section class="section count-sec">
+    <div class="wrap">
+      <h2 data-i18n="hb.count.h2" data-reveal>So, how many did you count?</h2>
+      <p class="lede" data-i18n="hb.count.p" data-reveal>That's your check-in for today.</p>
+      <h3 class="sym-h" data-i18n="hb.sym.h3" data-reveal>These need a doctor's attention</h3>
+      <div class="sym-grid" id="sym"></div>
+      <p class="sym-p" data-i18n="hb.sym.p" data-reveal>But don't wait for symptoms.</p>
+      <a class="btn" href="/me#checkup" data-reveal><span data-i18n="hb.sym.cta">Find my Check-Up</span></a>
+      <a class="cite" href="/sources#sD">[D]</a>
+    </div>
+  </section>
+</main>
+<footer data-shell="foot"></footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "Kidzy Daily",
+  "short_name": "Kidzy",
+  "description": "Your kidney's daily check-in.",
+  "start_url": "/check-in",
+  "display": "standalone",
+  "background_color": "#fff8ef",
+  "theme_color": "#ee5b6c",
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
